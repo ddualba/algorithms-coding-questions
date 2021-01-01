@@ -1,20 +1,6 @@
-// --- Directions
-// Write a function that accepts a positive number N.
-// The function should console log a pyramid shape
-// with N levels using the # character.  Make sure the
-// pyramid has spaces on both the left *and* right hand sides
-// --- Examples
-//   pyramid(1)
-//       '#'
-//   pyramid(2)
-//       ' # '
-//       '###'
-//   pyramid(3)
-//       '  #  '
-//       ' ### '
-//       '#####'
+'%c Oh my heavens! ', 'background: #222; color: #bada55';
 
-function pyramid(n) {
+function xmas(n) {
   let midpoint = Math.floor((2 * n - 1) / 2);
   for (let row = 0; row < n; row++) {
     //reset the level variable to empty each loop
@@ -32,8 +18,24 @@ function pyramid(n) {
     }
     console.log(level);
   }
+
+  // xmas tree stump
+  for (let row = 0; row < 4; row++) {
+    let level = '';
+
+    for (let column = 0; column < 2 * n - 1; column++) {
+      let add;
+      if (column >= midpoint - 2 && column <= midpoint + 2) {
+        add = '#';
+      } else {
+        add = ' ';
+      }
+      level += add;
+    }
+    console.log(level);
+  }
 }
 
-console.log(pyramid(10));
+console.log(xmas(3));
 
-module.exports = pyramid;
+module.exports = xmas;
